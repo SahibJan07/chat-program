@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+ <title> Chatting program </title>
+ <link ref:"stylesheet" <a:"style.css >
+<body>
+<!-- HTML for the chat interface -->
+<div id="chat-window">
+  <div id="messages">
+    <!-- messages will be added here -->
+  </div>
+  <input type="text" id="message-input" placeholder="Enter your message here">
+  <button id="send-button">Send</button>
+</div>
+
+<!-- JavaScript for handling chat functionality -->
+<script>
+  // get references to DOM elements
+  const chatWindow = document.getElementById('chat-window');
+  const messageInput = document.getElementById('message-input');
+  const sendButton = document.getElementById('send-button');
+
+  // add event listener to send button
+  sendButton.addEventListener('click', () => {
+    // get message from input field
+    const message = messageInput.value;
+
+    // add message to chat window
+    const messageElement = document.createElement('div');
+    messageElement.innerText = message;
+    chatWindow.appendChild(messageElement);
+
+    // clear input field
+    messageInput.value = '';
+  });
+</script>
